@@ -1,9 +1,12 @@
 import React from 'react';
 import {Cards, Chart, CountryPicker} from './components/'
 import styles from './App.module.css'
+import { Typography } from '@material-ui/core';
 import { fetchData } from './api';
 
 import coronaImage from './images/image.png'
+import rotateImage from './images/rotation.png'
+
 
 class App extends React.Component {
 
@@ -32,6 +35,10 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt="COVID-19"/>
+        <div className={styles.rotateWrapper}>
+          <Typography className={styles.infoText} color="textSecondary">Rotate phone for <br/> better chart readibility</Typography>
+          <img className={styles.rotateImage} src={rotateImage} alt="rotatePhone"/>
+        </div>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
