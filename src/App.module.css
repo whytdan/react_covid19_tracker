@@ -20,8 +20,7 @@ body {
   margin-top: 50px;
 }
 
-.rotateWrapper{
-  width: 50%;  
+.rotateWrapper{  
   margin-top: 40px;
   display: none;
   justify-content: space-between;
@@ -38,6 +37,7 @@ body {
 .rotateImage{
   width: 25px;
   height: 25px;
+  margin-left: 5px;
 }
 
 @media (max-width: 770px){

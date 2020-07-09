@@ -6,6 +6,7 @@ import { fetchData } from './api';
 
 import coronaImage from './images/image.png'
 import rotateImage from './images/rotation.png'
+import Loader from './components/UI/Loader/Loader';
 
 
 class App extends React.Component {
@@ -32,11 +33,15 @@ class App extends React.Component {
 
     const { data, country } = this.state;
 
+    if(!data.confirmed){
+      return <Loader/>
+    }
+
     return (
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt="COVID-19"/>
         <div className={styles.rotateWrapper}>
-          <Typography className={styles.infoText} color="textSecondary">Rotate phone for <br/> better chart readibility</Typography>
+          <Typography className={styles.infoText} color="textSecondary">Rotate your phone for a <br/> better chart readibility</Typography>
           <img className={styles.rotateImage} src={rotateImage} alt="rotatePhone"/>
         </div>
         <Cards data={data} />
